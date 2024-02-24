@@ -20,3 +20,7 @@ def details(request, id):
 		"the_member": the_member
 	}
 	return HttpResponse(template.render(context, request))
+
+def main(request):
+	template = loader.get_template("main.html")
+	return HttpResponse(template.render())
