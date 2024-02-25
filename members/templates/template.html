@@ -1,0 +1,11 @@
+{% extends "master.html" %}
+
+{% block title %} Testing {% endblock %}
+
+{% block content %}
+		{% for x in fruits %}
+		<h3>{{x}}</h3>
+		{% endfor %}
+
+	<p>Check views.py to see what the "fruits" variable looks like</p>
+{% endblock %}
