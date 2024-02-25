@@ -3,12 +3,9 @@
 {% block title %} Testing {% endblock %}
 
 {% block content %}
-		<!--{% for x in fruits %}
-		<h3>{{x}}</h3>
+	<ul>
+		{% for member in the_members %}
+			<li>{{ member.firstname }} {{ member.lastname}}</li>
 		{% endfor %}
-
-		<p>Check views.py to see what the "fruits" variable looks like</p>-->
-		{% with firstname="Emon" %}
-			<h1>Hello {{firstname}}, how are you?</h1>
-		{% endwith %}
+	</ul>
 {% endblock %}
