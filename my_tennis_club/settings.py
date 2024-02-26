@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-4&y47j_y%24n922euk*o#kyjx-8q262dbp@0b!8$)lg2yo(9(2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True#False
+DEBUG = False#True
 
-ALLOWED_HOSTS = []#'*']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -48,6 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware'
 ]
 
 ROOT_URLCONF = 'my_tennis_club.urls'
