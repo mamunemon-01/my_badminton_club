@@ -6,16 +6,19 @@
 	{% for x in the_members %}
 		<h1
 			{% if forloop.first %}
-			style='background-color:blue'
+			{#style='background-color:blue'#}
+			style='background-color:lightblue'
 			{% elif forloop.last %}
 			style='background-color:lightblue'
 			{% endif %}
-		>{{ forloop.revcounter0 }}</h1>
+		>{{ forloop.counter0 }}</h1>
 		<p>
 			{{ x.firstname }}
 			{{ x.lastname }}
 		</p>
+	{% comment "There are loyal members in the club" %}		
 	{% empty %}
 		<h1>No Members</h1>
+	{% endcomment %}
 	{% endfor %}
 {% endblock %}
