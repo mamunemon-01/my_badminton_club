@@ -3,6 +3,7 @@
 {% block title %} Testing {% endblock %}
 
 {% block content %}
+	{% include "mymenu.html" with me="MAMUN" sponsor="TALUKDER" %}
 	{% for x in the_members %}
 		<h1
 			{% if forloop.first %}
@@ -21,4 +22,5 @@
 		<h1>No Members</h1>
 	{% endcomment %}
 	{% endfor %}
+	{% include "footer.html" %}
 {% endblock %}
