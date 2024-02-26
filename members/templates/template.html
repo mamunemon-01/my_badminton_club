@@ -4,23 +4,16 @@
 
 {% block content %}
 	{% include "mymenu.html" with me="MAMUN" sponsor="TALUKDER" %}
-	{% for x in the_members %}
-		<h1
-			{% if forloop.first %}
-			{#style='background-color:blue'#}
-			style='background-color:lightblue'
-			{% elif forloop.last %}
-			style='background-color:lightblue'
-			{% endif %}
-		>{{ forloop.counter0 }}</h1>
-		<p>
-			{{ x.firstname }}
-			{{ x.lastname }}
-		</p>
-	{% comment "There are loyal members in the club" %}		
-	{% empty %}
-		<h1>No Members</h1>
-	{% endcomment %}
-	{% endfor %}
+	<h1>The the_members object</h1>
+	{{ the_members }}
+	<table border="1">
+		{% for x in the_members %}
+		<tr>
+			<td>{{ x.id }}</td>
+			<td>{{ x.firstname }}</td>
+			<td>{{ x.lastname }}</td>
+		</tr>
+		{% endfor %}
+	</table>
 	{% include "footer.html" %}
 {% endblock %}

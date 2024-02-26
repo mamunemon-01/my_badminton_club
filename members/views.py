@@ -2,6 +2,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from .models import Member
+from django.db.models import Q
 
 # Create your views here.
 def members(request):
@@ -26,9 +27,9 @@ def main(request):
 	return HttpResponse(template.render())
 
 def testing(request):
-	the_members = Member.objects.all().values()
+	the_data = Member.objects.all().order_by('lastname', '-id').values()
 	template = loader.get_template("template.html")
 	context = {
-		'the_members': the_members
+		'the_members': the_data
 	}
 	return HttpResponse(template.render(context, request))
