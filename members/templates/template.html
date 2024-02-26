@@ -3,19 +3,19 @@
 {% block title %} Testing {% endblock %}
 
 {% block content %}
-	{% if x is y %}
-		<h2>Not Exactly Same</h2>
-	{% elif x == y %}
-		<h2>Contents Are Same</h2>
-	{% endif %}
-	{% if x is not y %}
-		<h2>Told You They Are Not Exactly Same</h2>
-	{% endif %}
-	{% with a=x b=x %}
-		{% if a is not b %}
-			<h2>a({{a}}) and b({{b}}) are the same objects.</h2>
-		{% else %}
-			<h2>a and b refer to the same object x</h2>
-		{% endif %}
-	{% endwith %}
+	{% for x in the_members %}
+		<h1
+			{% if forloop.first %}
+			style='background-color:blue'
+			{% elif forloop.last %}
+			style='background-color:lightblue'
+			{% endif %}
+		>{{ forloop.revcounter0 }}</h1>
+		<p>
+			{{ x.firstname }}
+			{{ x.lastname }}
+		</p>
+	{% empty %}
+		<h1>No Members</h1>
+	{% endfor %}
 {% endblock %}
