@@ -3,13 +3,13 @@
 {% block title %} My Tennis Club - The List of All The Members {% endblock %}
 
 {% block content %}
-<p><a href="/">HOME</a></p>
 
-<h1>Members</h1>
-
-<ul>
-	{% for x in the_members %}
-		<li><a href="details/{{ x.id }}">{{x.firstname}} {{x.lastname}}</a></li>
-	{% endfor %}
-</ul>
+	<div class="mycard">
+		<h1>Members</h1>
+		<ul>
+			{% for x in the_members %}
+				<li onclick="window.location='details/{{ x.id }}'">{{x.firstname}} {{x.lastname}}</li>
+			{% endfor %}
+		</ul>
+	</div>
 {% endblock %}

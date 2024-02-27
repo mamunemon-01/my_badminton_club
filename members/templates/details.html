@@ -3,10 +3,12 @@
 {% block title %} Details about - {{the_member.firstname}} {{the_member.lastname}} {% endblock %}
 
 {% block content %}
+
+<div class="mycard">
 <h1>{{the_member.firstname}} {{the_member.lastname}}</h1>
 
-<p>Phone: {{the_member.phone}}</p>
+<p>Phone: +{{the_member.phone}}</p>
 <p>Member Since: {{the_member.joining_date}}</p>
+</div>
 
-<p>Back to <a href="/members">Members</a></p>
 {% endblock %}
